@@ -236,7 +236,16 @@ a {
     text-align: center;
 	margin-bottom: 0;
 }
-
+/* スマートフォン向け */
+@media (max-width: 760px) {
+    .intro-title {
+        font-size: 22px;      /* スマホでは文字を小さく */
+        font-weight: 700;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
 
 
 /* =====================================

@@ -270,7 +270,7 @@ a {
 .activity-caption {
     margin: 24px 0 0;
     padding: 0 12px;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.9;
     color: #cccccc;
 }
@@ -296,7 +296,27 @@ a {
     }
 }
 
+/* 最後の活動紹介の下余白を縮める */
+.activity-item:last-of-type {
+    margin-bottom: 10px;
+}
 
+/* 活動案内ボタンの中央配置 */
+.activity-link {
+    text-align: center;
+    margin-top: 0;
+}
+/* ボタンの大きさ */
+.activity-link .button {
+    width: 400px;       /* 横幅 */
+    max-width: 100%;    /* スマホでは画面内に収める */
+    padding: 17px 24px; /* 縦17px、横24pxの余白 */
+    font-size: 16px;    /* 文字サイズ */
+}
+
+.activity-item:last-of-type {
+    margin-bottom: 10px;
+}
 
 /* Instagram埋め込みエリア */
 .instagram-section {

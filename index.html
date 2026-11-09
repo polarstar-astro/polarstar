@@ -6,21 +6,24 @@
   <!-- 文字コード・スマートフォン表示・検索結果向け説明など -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="18~30限定！愛知を中心に活動します！">
-  <title>天文サークル ポーラスター | 愛知・名古屋</title>
+  <meta name="description" content="18~30歳限定！愛知を中心に活動する天文サークルです！天体観測や交流イベントを通じて仲間と親睦を深めます。">
+  <title>天文サークル ポーラスター | 愛知県・名古屋</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- ヘッダー：サイト名と、別ページに移動するメニュー -->
   <!-- activities.html / events.html / join.html は未作成です。 -->
   <header class="site-header">
-    <div class="container header-inner">
-      <!-- ヘッダーロゴ：SVG形式。拡大しても画質は劣化しません。クリックでホームに戻ります。 -->
+    <div class="common-container header-inner">
       <a class="brand" href="index.html" aria-label="ポーラスター ホーム">
         <img src="polarstar-logo.svg" alt="POLARSTAR 天文サークル" width="270" height="87">
       </a>
+      <!-- ヘッダーメニュー -->
       <nav aria-label="メインナビゲーション">
         <a class="current" href="index.html" aria-current="page">ホーム</a>
+		<a href="activities.html">活動内容</a>
+		<a href="join.html">参加方法</a>
+		<a href="rules.html">会則</a>
       </nav>
     </div>
   </header>
@@ -35,45 +38,45 @@
 	<!-- 見出し1 -->
 	<section class="activity-section">
 		<h2 class="intro-title">
-			社会人・大学生向け<br>愛知を中心とした天文サークルです！
+			18～30歳限定<br>社会人・大学生向け<br>愛知を中心とした天文サークルです！
 		</h2>
 	</section>
 	
 
 	<!-- 活動紹介セクション -->
-	<section class="section">
-		<div class="container">
+	<section class="common-section">
+		<div class="common-container">
 
 			<!-- 活動1 -->
-			<article class="activity-item">
+			<article class="common-item">
 
 				<!-- タイトル -->
-				<h2 class="activity-heading">人と仲良くなる！</h2>
+				<h2>人と仲良くなる！</h2>
 
 				<!-- 画像 -->
 				<img
-					class="activity-picture"
-					src="images/activity1.jpg"
+					class="common-picture common-picture-short"
+					src="images/activity1-top.jpg"
 					alt="活動写真1"
 				>
 
 				<!-- 説明文 -->
-				<p class="activity-caption">天体観測、バードウォッチング、BBQなどいろいろなイベントを予定しています。</p>
+				<p class="common-caption">天体観測、バードウォッチング、BBQなどいろいろなイベントを予定しています。</p>
 
 			</article>
 
 			<!-- 活動2 -->
-			<article class="activity-item">
+			<article class="common-item">
 
-				<h2 class="activity-heading">星を見る！</h2>
+				<h2>星を見る！</h2>
 
 				<img
-					class="activity-picture"
-					src="images/activity2.jpg"
+					class="common-picture common-picture-short"
+					src="images/activity2-top.jpg"
 					alt="活動写真2"
 				>
 
-				<p class="activity-caption">望遠鏡や肉眼で見ます。初心者でも大丈夫！<br>sirilなど天体写真や星景写真の情報共有も行いたいです！</p>
+				<p class="common-caption">望遠鏡や肉眼で見ます。初心者でも大丈夫！<br>sirilなど天体写真や星景写真の情報共有も行いたいです！</p>
 
 			</article>
 
@@ -81,14 +84,14 @@
 	</section>
 
 	<!-- 詳しい活動内容へのボタン -->
-	<div class="activity-link">
-		<a href="activities.html" class="button button-dark">
-			詳しい活動内容はこちらから
-		</a>
-	</div>
+	<a href="activities.html" class="common-button common-button-dark">
+		詳しい活動内容はこちらから
+	</a>
 	
 	<!-- Instagramプロフィールの埋め込み -->
+	<div class="common-container">
 	<section class="instagram-section">
+	<h2 class="common-heading">インスタにて活動を発信中！</h2>
 		<blockquote
 			class="instagram-media"
 			data-instgrm-permalink="https://www.instagram.com/polarstar.astro/"
@@ -97,18 +100,16 @@
 
 		<script async src="https://www.instagram.com/embed.js"></script>
 	</section>
+	</div>
 
     <!-- 入会案内：対象年齢・会費の概要と別ページへのリンク -->
-    <section class="section" aria-labelledby="join-title">
-      <div class="container join-panel">
-        <div><div class="section-heading"><h2 id="join-title">入会案内</h2><span>JOIN US</span></div><p>対象：18〜30歳（高校生を除く）</p><p>年会費なし・イベントごとに参加費を徴収します。</p></div>
-        <a class="button button-dark" href="join.html">入会案内へ →</a>
-      </div>
-    </section>
-  </main>
+	<p class="join-description-top">12月から参加可能です。<br>対象：18〜30歳（高校生を除く）<br>年会費なし・イベントごとに参加費を徴収します。</p>
+	<a href="join.html" class="common-button common-button-dark">
+		参加方法はこちらから
+	</a>
 
   <!-- フッター：団体名・著作権表記 -->
-  <footer class="site-footer"><div class="container footer-inner"><span>天文サークル ポーラスター</span><small>© 2026 Polarstar</small></div></footer>
+  <footer class="site-footer"><div class="common-container footer-inner"><span>天文サークル ポーラスター</span><small>© 2026 天文サークル ポーラスター</small></div></footer>
   <!-- スライドショーの制御 -->
   <script src="slideshow.js" defer></script>
 </body>

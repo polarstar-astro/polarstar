@@ -1,35 +1,34 @@
-<!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="天文サークル ポーラスターの会則。">
   <title>会則 | 天文サークル ポーラスター</title>
   <!-- サイト共通のスタイルシートを読み込みます -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ヘッダー：ロゴをクリックするとトップページに移動します -->
+  <!-- ヘッダー -->
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="common-container header-inner">
       <a class="brand" href="index.html" aria-label="ポーラスター ホーム">
         <img src="polarstar-logo.svg" alt="天文サークル ポーラスター">
       </a>
-      <!-- ヘッダーメニューは独立ページへのリンクです -->
+      <!-- ヘッダーメニュー -->
       <nav aria-label="メインナビゲーション">
         <a href="index.html">ホーム</a>
-        <a href="activities.html">活動案内</a>
-        <a href="events.html">イベント情報</a>
-        <a href="join.html">入会案内</a>
+		<a href="activities.html">活動内容</a>
+		<a href="join.html">参加方法</a>
         <a class="current" href="rules.html" aria-current="page">会則</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main class="common-container">
     <!-- ページ見出し -->
+	<section class="common-hero">
+		<img src="images/rule-hero.jpg" alt="会則の画像">
+	</section>
     <div class="page-heading">
-      <p class="eyebrow">RULES</p>
       <h1>会則</h1>
       <p class="subtitle">天文サークル ポーラスター</p>
     </div>
@@ -151,15 +150,16 @@
           <li>解散時に残存する資金及び財産の処分方法は、代表が決定する。</li>
         </ol>
     </section>
+
+    <!-- 附則：施行日 -->
+    <section class="rule" aria-labelledby="rule-supplementary">
+      <h2 id="rule-supplementary">附則（施行日）</h2>
+      <p>本会則は、2026年11月10日から施行する。</p>
+    </section>
     </div>
   </main>
 
-  <!-- フッター -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>天文サークル ポーラスター</span>
-      <small>© 2026 Polarstar</small>
-    </div>
-  </footer>
+ <!-- フッター：団体名・著作権表記 -->
+  <footer class="site-footer"><div class="common-container footer-inner"><span>天文サークル ポーラスター</span><small>© 2026 天文サークル ポーラスター</small></div></footer>
 </body>
 </html>

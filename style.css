@@ -1,7 +1,8 @@
-/* ポーラスター公式サイト：トップページのデザイン（style.css） */
-/* 文章や日付は index.html、色・余白・文字サイズなどはこのファイルで変更します。 */
+/* ========================================
+   天文サークル ポーラスター｜サイト共通CSS
+   ======================================== */
 
-/* サイト全体で使う色の設定 */
+/* 1. カラー・基本設定 */
 :root {
     --ink: #f0f0f0;
     --muted: #aaaaaa;
@@ -11,40 +12,71 @@
     --pale: #1a1a1a;
 }
 
-/* すべての要素に共通する基本設定 */
 * {
     box-sizing: border-box;
 }
 
-/* ページ全体の基本設定 */
 html {
     scroll-behavior: smooth;
 }
 
-/* 本文の文字・背景 */
 body {
     margin: 0;
-    font-family: -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
     color: var(--ink);
     background: #1a1a1a;
     line-height: 1.75;
 }
 
-/* リンクの基本表示 */
 a {
     color: inherit;
     text-decoration: none;
 }
 
-/* コンテンツの横幅 */
-.container {
-    width: min(1100px,calc(100% - 44px));
+/* 2. 共通部品（common- で始まるクラス） */
+.common-container {
+    width: min(1100px, calc(100% - 44px));
     margin: auto;
 }
 
-/* ヘッダー */
+.common-section {
+    padding: 72px 0;
+}
+
+.common-section-muted {
+    background: var(--pale);
+}
+
+.common-section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 27px;
+}
+
+.common-section-heading h2 {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1.3;
+}
+
+.common-section-heading span {
+    color: #999999;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+/* スマートフォン：共通セクション */
+@media (max-width: 760px) {
+    .common-section {
+        padding: 54px 0;
+    }
+}
+
+/* 3. ヘッダー・ナビゲーション */
 .site-header {
-    background: #0A0A0A;
+    background: #0a0a0a;
     border-bottom: 1px solid var(--line);
 }
 
@@ -63,7 +95,6 @@ a {
     line-height: 0;
 }
 
-/* SVGロゴの表示寸法。縦横比を維持します。 */
 .brand img {
     display: block;
     width: 200px;
@@ -81,25 +112,74 @@ a {
 
 .site-header nav {
     display: flex;
-    gap: 26px;
     flex-wrap: wrap;
+    gap: 26px;
 }
 
 .site-header nav a {
+    padding: 8px 0;
+    color: #e0e0e0;
     font-size: 14px;
     font-weight: 600;
-    color: #e0e0e0;
-    padding: 8px 0;
     border-bottom: 2px solid transparent;
 }
 
-.site-header nav a:hover,.site-header nav .current {
+.site-header nav a:hover,
+.site-header nav .current {
     color: #fff;
     border-color: #c2c2c2;
 }
 
-/* トップのメインエリア：背景を統一して余白で区切ります */
+/* スマートフォン：ヘッダー */
+@media (max-width: 760px) {
+    .header-inner {
+        display: block;
+        padding: 16px 0;
+    }
+
+    .brand img {
+        width: 170px;
+    }
+
+    .site-header nav {
+        margin-top: 13px;
+        gap: 16px;
+    }
+
+    .site-header nav a {
+        font-size: 12px;
+    }
+}
+
+/* 共通ヒーローセクション */
+.common-hero {
+    position: relative;
+    width: min(1100px, calc(100% - 44px));
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+.common-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* スマートフォン */
+@media (max-width: 760px) {
+    .common-hero {
+        height: 280px;
+    }
+}
+
+/* 4. トップ・スライドショー */
 .hero {
+    position: relative;
+    width: min(1100px, calc(100% - 44px));
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
     background: #1a1a1a;
     color: var(--ink);
 }
@@ -108,18 +188,11 @@ a {
     padding: 105px 0 115px;
 }
 
-.eyebrow {
-    color: #aaaaaa;
-    font-size: 12px;
-    letter-spacing: .2em;
-    font-weight: 700;
-}
-
 .hero h1 {
-    font-size: clamp(34px,5.5vw,62px);
-    line-height: 1.45;
-    letter-spacing: .04em;
     margin: 20px 0;
+    font-size: clamp(34px, 5.5vw, 62px);
+    line-height: 1.45;
+    letter-spacing: 0.04em;
 }
 
 .hero h1 span {
@@ -127,84 +200,16 @@ a {
 }
 
 .hero-description {
-    color: #bcbcbc;
     margin: 0 0 32px;
+    color: #bcbcbc;
     font-size: 16px;
 }
 
-/* ボタン */
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    border-radius: 5px;
-    padding: 13px 23px;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.button-primary {
-    background: #f0f0f0;
-    color: #1a1a1a;
-}
-
-.button-dark {
-    background: #f0f0f0;
-    color: #1a1a1a;
-}
-
-.button:hover {
-    opacity: .85;
-}
-
-/* 各セクション共通 */
-.section {
-    padding: 72px 0;
-}
-
-.section-muted {
-    background: var(--pale);
-}
-
-.section-heading {
-    display: flex;
-    align-items: baseline;
-    gap: 18px;
-    margin-bottom: 27px;
-}
-
-.section-heading h2 {
-    font-size: 26px;
-    line-height: 1.3;
-    margin: 0;
-}
-
-.section-heading span {
-    font-size: 11px;
-    letter-spacing: .14em;
-    color: #999999;
-    font-weight: 700;
-}
-
-
-/* ヒーローセクション */
-.hero {
-    position: relative;
-    width: min(1100px, calc(100% - 44px));
-    height: 500px;
-    margin: 0 auto;
-    overflow: hidden;
-    background: #1a1a1a;
-}
-
-/* スライドショーの表示領域 */
 .hero-slideshow {
     position: absolute;
     inset: 0;
 }
 
-/* JavaScriptが生成する画像 */
 .hero-slide {
     position: absolute;
     inset: 0;
@@ -215,126 +220,157 @@ a {
     transition: opacity 1s ease-in-out;
 }
 
-/* 表示中の画像 */
 .hero-slide.is-active {
     opacity: 1;
 }
 
-/* スマートフォン */
+/* スマートフォン：トップ・スライドショー */
 @media (max-width: 760px) {
     .hero {
         height: 280px;
     }
+
+    .hero-inner {
+        padding: 75px 0 85px;
+    }
 }
 
+/* 5. 共通ボタン */
+.common-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 17px 24px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
 
-/* サークル紹介の大きな文字 */
+.common-button-primary,
+.common-button-dark {
+    background: #f0f0f0;
+    color: #1a1a1a;
+}
+
+.common-button:hover {
+    opacity: 0.85;
+}
+
+/* 6. 紹介・活動用の共通部品（intro-title は専用） */
 .intro-title {
+    margin-bottom: 0;
     font-size: 32px;
     font-weight: 700;
     line-height: 1.4;
     text-align: center;
-	margin-bottom: 0;
-}
-/* スマートフォン向け */
-@media (max-width: 760px) {
-    .intro-title {
-        font-size: 22px;      /* スマホでは文字を小さく */
-        font-weight: 700;
-        line-height: 1.5;
-        text-align: center;
-        margin-bottom: 0;
-    }
 }
 
-
-/* =====================================
-   活動紹介セクション
-===================================== */
-
-/* 活動1件分 */
-.activity-item {
-    width: 90%;
+.common-item {
+    width: 95%;
     margin: 0 auto 45px;
 }
 
-/* タイトル */
-.activity-heading {
-    font-size: 32px;
-    font-weight: 700;
-    margin: 0 0 8px;
-    color: #f0f0f0;
+.common-item:last-of-type {
+    margin-bottom: 10px;
 }
 
-/* 横長画像 */
-.activity-picture {
+.common-picture {
     display: block;
     width: 100%;
-    height: 80px;
+    height: auto;
     object-fit: cover;
     object-position: center;
 }
 
-/* 画像の下の説明文 */
-.activity-caption {
-    margin: 24px 0 0;
-    padding: 0 12px;
-    font-size: 24px;
-    line-height: 1.9;
-    color: #cccccc;
+/* トップページなどで使う、縦幅の短い画像 */
+.common-picture-short {
+    height: 80px;
 }
 
-/* スマートフォン対応 */
-@media (max-width: 760px) {
+.common-caption {
+    margin: 24px 0 0;
+    padding: 0 12px;
+    color: #cccccc;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.9;
+}
 
-    .activity-item {
-        width: 100%;
+/* 共通横並び */
+.common-horizontal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 30px;
+}
+
+/* 2列の場合 */
+.common-horizontal.two-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.common-horizontal .common-item {
+    width: 100%;
+    margin: 0;
+	background-color: #292929;
+}
+
+/* 横並び項目のタイトルを中央寄せ */
+.common-horizontal .common-item h3 {
+    text-align: center;
+}
+
+/* 入会案内の説明文（ボタンとは別の要素） */
+.join-description-top {
+    text-align: center;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+/* スマートフォン：サークル紹介・活動紹介 */
+@media (max-width: 760px) {
+    .intro-title {
+        font-size: 22px;
+        line-height: 1.5;
+    }
+
+    .common-item {
         margin-bottom: 35px;
     }
 
-    .activity-heading {
+    .common-heading {
         font-size: 25px;
     }
 
-    .activity-picture {
+    .common-picture-short {
         height: 60px;
     }
 
-    .activity-caption {
-        font-size: 14px;
+    .common-caption {
+        font-size: 18px;
     }
-}
-
-/* 最後の活動紹介の下余白を縮める */
-.activity-item:last-of-type {
-    margin-bottom: 10px;
-}
-
-/* 活動案内ボタンの中央配置 */
-.activity-link {
+	.common-horizontal,
+    .common-horizontal.two-columns {
+        grid-template-columns: 1fr;
+    }
+	.join-description-top {
     text-align: center;
-    margin-top: 0;
+	font-size: 16px;
 }
-/* ボタンの大きさ */
-.activity-link .button {
-    width: 400px;       /* 横幅 */
-    max-width: 100%;    /* スマホでは画面内に収める */
-    padding: 17px 24px; /* 縦17px、横24pxの余白 */
-    font-size: 16px;    /* 文字サイズ */
 }
 
-.activity-item:last-of-type {
-    margin-bottom: 10px;
-}
-
-/* Instagram埋め込みエリア */
+/* 7. Instagram */
 .instagram-section {
-    width: min(880px, calc(100% - 44px));
+    width: 95%;
     margin: 0 auto;
     padding: 60px 0;
 }
 
-/* Instagram埋め込み */
 .instagram-media {
     width: 100% !important;
     max-width: 100% !important;
@@ -342,97 +378,21 @@ a {
     box-sizing: border-box;
 }
 
-
-/* 入会案内 */
-.join-panel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 32px;
-}
-
-.join-panel .section-heading {
-    margin-bottom: 20px;
-}
-
-.join-panel p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #aaaaaa;
-}
-
-/* フッター */
+/* 8. フッター */
 .site-footer {
     background: #1a1a1a;
     color: #f0f0f0;
 }
 
 .footer-inner {
-    min-height: 105px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    min-height: 105px;
     font-size: 14px;
 }
 
 .footer-inner small {
     color: #aaaaaa;
-}
-
-/* スマートフォン向け表示 */
-@media(max-width:760px) {
-    .header-inner {
-        padding: 16px 0;
-        display: block;
-    }
-    .brand img {
-        width: 220px;
-    }
-    .site-header nav {
-        margin-top: 13px;
-        gap: 16px;
-    }
-    .site-header nav a {
-        font-size: 12px;
-    }
-    .hero-inner {
-        padding: 75px 0 85px;
-    }
-    /* 各セクション共通 */
-.section {
-        padding: 54px 0;
-    }
-    .news-item {
-        gap: 9px;
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
-    .news-item p {
-        width: 100%;
-    }
-    /* 次回イベント */
-    .event-card {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 16px;
-        padding: 22px;
-    }
-    .date-block {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-        padding: 0 0 12px;
-        width: 100%;
-    }
-    /* 入会案内 */
-    .join-panel {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-    .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 4px;
-    }
 }

@@ -396,3 +396,14 @@ a {
 .footer-inner small {
     color: #aaaaaa;
 }
+
+/* 公式LINEボタン */
+.line-button {
+    background-color: #06C755;
+    color: #ffffff;
+}
+
+.line-button:hover {
+    background-color: #05b34c;
+    opacity: 1;
+}
